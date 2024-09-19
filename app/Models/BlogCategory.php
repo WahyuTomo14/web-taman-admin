@@ -10,6 +10,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class BlogCategory extends Model
 {
     use HasFactory, AuditedBy, SoftDeletes;
-    protected $table = 'blog_categories';
+    protected $table = 'blogcategories';
     protected $guarded = ['id'];
 }

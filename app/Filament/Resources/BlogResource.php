@@ -18,8 +18,10 @@ class BlogResource extends Resource
 {
     protected static ?string $model = Blog::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
+    protected static ?string $navigationGroup = 'Manajemen Blog';
+    
     public static function form(Form $form): Form
     {
         return $form
@@ -44,8 +46,8 @@ class BlogResource extends Resource
                     ->columnspanfull(),
                 Forms\Components\TextInput::make('maps')
                     ->required()
-                    ->maxLength(128)
-                    ->columnspanfull(),
+                    ->columnspanfull()
+                    ->url(),
                 Forms\Components\Toggle::make('active')
                     ->required(),
             ]);
@@ -59,13 +61,17 @@ class BlogResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('blogcategories_id')
-                    ->numeric()
-                    ->sortable(),
+                Tables\Columns\TextColumn::make('BlogCategories.name'),
+                Tables\Columns\TextColumn::make('body')
+                    ->searchable()
+                    ->limit(30),
                 Tables\Columns\ImageColumn::make('foto')
                     ->searchable()
                     ->circular()
                     ->stacked(),
+                Tables\Columns\TextColumn::make('maps')
+                    ->searchable()
+                    ->limit(30),
                 Tables\Columns\IconColumn::make('active')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_by')

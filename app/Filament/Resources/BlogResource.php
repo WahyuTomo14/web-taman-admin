@@ -28,6 +28,7 @@ class BlogResource extends Resource
             ->schema([
                 Forms\Components\FileUpload::make('thumbnail')
                     ->required()
+                    ->disk('taman')
                     ->columnspanfull(),
                 Forms\Components\TextInput::make('title')
                     ->required()
@@ -43,6 +44,7 @@ class BlogResource extends Resource
                     ->columnspanfull(),
                 Forms\Components\FileUpload::make('foto')
                     ->required()
+                    ->disk('taman')
                     ->columnspanfull(),
                 Forms\Components\TextInput::make('maps')
                     ->required()
@@ -58,7 +60,8 @@ class BlogResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('thumbnail')
-                    ->searchable(),
+                    ->searchable()
+                    ->disk('taman'),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('BlogCategories.name'),
@@ -67,6 +70,7 @@ class BlogResource extends Resource
                     ->limit(30),
                 Tables\Columns\ImageColumn::make('foto')
                     ->searchable()
+                    ->disk('taman')
                     ->circular()
                     ->stacked(),
                 Tables\Columns\TextColumn::make('maps')

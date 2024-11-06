@@ -42,14 +42,6 @@ class BlogResource extends Resource
                 Forms\Components\RichEditor::make('body')
                     ->required()
                     ->columnspanfull(),
-                Forms\Components\FileUpload::make('foto')
-                    ->required()
-                    ->disk('taman')
-                    ->columnspanfull(),
-                Forms\Components\TextInput::make('maps')
-                    ->required()
-                    ->columnspanfull()
-                    ->url(),
                 Forms\Components\Toggle::make('active')
                     ->required(),
             ]);
@@ -67,14 +59,7 @@ class BlogResource extends Resource
                 Tables\Columns\TextColumn::make('BlogCategories.name'),
                 Tables\Columns\TextColumn::make('body')
                     ->searchable()
-                    ->limit(30),
-                Tables\Columns\ImageColumn::make('foto')
-                    ->searchable()
-                    ->disk('taman')
-                    ->circular()
-                    ->stacked(),
-                Tables\Columns\TextColumn::make('maps')
-                    ->searchable()
+                    ->html()
                     ->limit(30),
                 Tables\Columns\IconColumn::make('active')
                     ->boolean(),

@@ -16,4 +16,14 @@ class Taman extends Model
     public function kelurahan(){
         return $this->belongsTo(kelurahan::class, 'kelurahans_id');
     }
+
+    public function getLuasFormattedAttribute()
+    {
+        return number_format($this->luas, 2, ',', '.');
+    }
+
+    public function getKecamatanNameAttribute()
+    {
+        return $this->kelurahan?->kecamatan?->name ?? 'Tidak Ada';
+    }
 }

@@ -12,4 +12,8 @@ class Blog extends Model
     use HasFactory, AuditedBy, SoftDeletes;
     protected $table = 'blogs';
     protected $guarded = ['id'];
+
+    public function blogCategori(){
+        return $this->belongsTo(BlogCategory::class, 'blogcategories_id');
+    }
 }

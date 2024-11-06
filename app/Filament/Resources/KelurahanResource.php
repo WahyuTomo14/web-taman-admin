@@ -5,33 +5,37 @@ namespace App\Filament\Resources;
 use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
+use App\Models\Kecamatan;
+use App\Models\Kelurahan;
 use Filament\Tables\Table;
-use App\Models\BlogCategory;
 use Filament\Resources\Resource;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\KelurahanResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\BlogCategoryResource\Pages;
-use App\Filament\Resources\BlogCategoryResource\RelationManagers;
+use App\Filament\Resources\KelurahanResource\RelationManagers;
 
-class BlogCategoryResource extends Resource
+class KelurahanResource extends Resource
 {
-    protected static ?string $model = BlogCategory::class;
+    protected static ?string $model = Kelurahan::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-list';
-
-    protected static ?string $navigationGroup = 'Manajemen Blog';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
-                ->required()
-                ->maxLength(64)
-                ->columnspanfull(),
+                    ->required()
+                    ->maxLength(64)
+                    ->ColumnSpanFull(),
+                Forms\Components\Select::make('kecamatans_id')
+                    ->label('Kecamatan')
+                    ->options(Kecamatan::all()->pluck('name', 'id'))
+                    ->required()
+                    ->columnspanfull(),
                 Forms\Components\Toggle::make('active')
-                ->required(),
+                    ->required(),
             ]);
     }
 
@@ -41,6 +45,7 @@ class BlogCategoryResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('Kecamatan.name'),
                 Tables\Columns\IconColumn::make('active')
                     ->boolean(),
                 TextColumn::make('createdBy.name')
@@ -87,9 +92,9 @@ class BlogCategoryResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListBlogCategories::route('/'),
-            'create' => Pages\CreateBlogCategory::route('/create'),
-            'edit' => Pages\EditBlogCategory::route('/{record}/edit'),
+            'index' => Pages\ListKelurahans::route('/'),
+            'create' => Pages\CreateKelurahan::route('/create'),
+            'edit' => Pages\EditKelurahan::route('/{record}/edit'),
         ];
     }
 

@@ -7,9 +7,11 @@
     <title>Home</title>
     @vite('resources/css/app.css')
 </head>
+<x-navbar /> <!-- Memanggil komponen navbar -->
 <body>
     <h1 class="text-3xl font-bold underline">
         Hello world!
     </h1>
 </body>
+<x-footer /> 
 </html>

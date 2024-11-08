@@ -98,8 +98,8 @@
         <div class="md:w-1/3 pt-36 pl-8">
             <h3 class="font-semibold text-xl mb-4">Pages</h3>
             <ul class="space-y-2">
-                <li><a href="#" class="text-lg hover:text-gray-400">Beranda</a></li>
-                <li><a href="#" class="text-lg hover:text-gray-400">Tentang Kami</a></li>
+                <li><a href="/Home" class="text-lg hover:text-gray-400">Beranda</a></li>
+                <li><a href="/tentangkami" class="text-lg hover:text-gray-400">Tentang Kami</a></li>
                 <li><a href="#" class="text-lg hover:text-gray-400">Blog</a></li>
                 <li><a href="#" class="text-lg hover:text-gray-400">Data Taman</a></li>
             </ul>

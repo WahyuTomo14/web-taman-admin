@@ -72,6 +72,7 @@
         </div>
     </div>
 
+    <!-- Kartu Jumlah -->
     <div class="mt-10 w-full bg-[#0A0737] py-14 font-inter">
         <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-4 md:px-0">
             <!-- Kartu Jumlah Taman -->

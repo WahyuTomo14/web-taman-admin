@@ -57,7 +57,7 @@ class BlogResource extends Resource
                     ->disk('taman'),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('BlogCategories.name'),
+                Tables\Columns\TextColumn::make('blogCategori.name'),
                 Tables\Columns\TextColumn::make('body')
                     ->searchable()
                     ->html()

@@ -12,4 +12,9 @@ class BlogCategory extends Model
     use HasFactory, AuditedBy, SoftDeletes;
     protected $table = 'blogcategories';
     protected $guarded = ['id'];
+
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class);
+    }
 }

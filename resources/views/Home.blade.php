@@ -99,7 +99,8 @@
         </div>
     </div>
 
+    <div class="container mx-auto py-8">
+        <x-BlogRowComponent :blogs="$blogs" />
     </div>
-</body>
 <x-footer /> 
 </html>

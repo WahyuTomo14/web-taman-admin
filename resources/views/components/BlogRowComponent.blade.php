@@ -9,7 +9,7 @@
                         <img src="{{ Storage::disk('taman')->url($blog->thumbnail) }}" alt="Blog Image" class="w-full h-48 object-cover">
                         <div class="p-4">
                             <p class="text-sm text-gray-500">{{ $blog->created_at->format('M d, Y') }}</p>
-                            <p class="text-sm text-white inline-block bg-cyan-700 font-semibold px-2 rounded">{{ $blog->blogCategori->name }}</p>
+                            <p class="text-sm text-white inline-block bg-cyan-700 font-semibold px-2 rounded shadow text-center">{{ $blog->blogCategori->name }}</p>
                             <h3 class="text-lg font-semibold mt-2 hover:text-[#0A0737]">{{ $blog->title }}</h3>
                             <p class="text-gray-800 text-sm mt-2">
                                 {{ Str::limit(strip_tags($blog->body), 100) }}

@@ -5,7 +5,7 @@
         <!-- Logo and Description Section -->
         <div class="mb-8 md:mb-0 md:w-1/3">
             <img src="images/logofooter.png" alt="Logo" class="mb-4 w-[310px] h-[130px] hover:scale-105 transition-transform pt-4">
-            <p class="mt-2 pt-4 text-lg leading-relaxed">
+            <p class="mt-2 pt-4 text-lg leading-relaxed text-gray-300">
                 Dinas Pertamanan dan Hutan Kota Provinsi DKI Jakarta merupakan Satuan Kerja Perangkat Daerah yang mengurusi urusan Kehutanan, Pertamanan, dan Permakaman di Lingkup Kerja Wilayah DKI Jakarta.
             </p>
             <!-- Sosmed -->

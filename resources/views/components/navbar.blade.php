@@ -5,7 +5,7 @@
     <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-10 text-black px-12">
         <a class="text-xl hover:text-primary hover:scale-105 transition-transform" href="/">Beranda</a>
         <a class="text-xl hover:text-primary hover:scale-105 transition-transform" href="/tentangkami">Tentang Kami</a>
-        <a class="text-xl hover:text-primary hover:scale-105 transition-transform" href="#">Blog</a>
+        <a class="text-xl hover:text-primary hover:scale-105 transition-transform" href="/blogs">Blog</a>
         <a class="text-xl hover:text-primary hover:scale-105 transition-transform" href="#">Data Taman</a>
     </div>
 </nav>

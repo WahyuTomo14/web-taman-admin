@@ -7,25 +7,43 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    // Method untuk menampilkan halaman daftar blog (index)
-     // Method untuk halaman utama yang menampilkan beberapa blog
+    // Method untuk menampilkan halaman utama yang menampilkan beberapa blog
     public function home()
     {
-         $blogs = Blog::latest()->take(9)->get(); // Ambil 9 blog terbaru
-         return view('Home', compact('blogs'));   // Kirim data blogs ke view home
+        // Mengambil 9 blog terbaru
+        $blogs = Blog::latest()->take(9)->get(); 
+        return view('home', compact('blogs'));  // pastikan 'home' adalah nama file view yang benar
     }
 
-     // Method untuk menampilkan daftar blog
-    public function index()
+    // Method untuk menampilkan halaman daftar blog (index) dengan pagination
+    public function blog()
     {
-        $blogs = Blog::paginate(10); // Ambil 10 blog per halaman
-        return view('blogs.index', compact('blogs'));
+        // Mengambil 9 blog terbaru dengan pagination
+        $blogs = Blog::latest()->paginate(9);
+        return view('blog.index', compact('blogs'));
     }
 
-     // Method untuk menampilkan detail blog
-    public function show($title)
+    // Method untuk menampilkan halaman daftar blog (index) dengan pencarian dan pagination
+    public function index(Request $request)
     {
-        $blog = Blog::where('title', $title)->firstOrFail();
-        return view('blogs.show', compact('blog'));
+        // Mencari berdasarkan input dari form pencarian
+        $search = $request->input('search');
+        
+        $blogs = Blog::query()
+            ->when($search, function($query, $search) {
+                return $query->where('title', 'like', "%{$search}%")
+                        ->orWhere('body', 'like', "%{$search}%");
+            })
+            ->latest()
+            ->paginate(10); // Pagination 10 data per halaman
+
+        return view('blog.index', compact('blogs'));  // Mengirimkan data ke view blog.index
+    }
+
+    public function show($id)
+    {
+        $blog = Blog::findOrFail($id);  // Mencari blog berdasarkan ID
+        $blogs = Blog::where('id', '!=', $id)->latest()->take(6)->get();
+        return view('blog.detail', compact('blog', 'blogs')); // Mengirimkan data blog ke view
     }
 }

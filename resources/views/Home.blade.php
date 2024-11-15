@@ -52,18 +52,18 @@
         <!-- Visi and Misi Section -->
         <div class="relative max-w-5xl mx-auto mt-30 flex flex-col md:flex-row items-start space-y-6 md:space-y-0 md:space-x-8 pt-80 justify-center">
             <!-- Visi Section -->
-            <div class="bg-white shadow-xl rounded-lg p-6 flex-1 hover:scale-105 transition-transform">
-                <h2 class="text-xl font-bold mb-4 text-center">Visi</h2>
-                <p class="text-gray-700 text-center">
+            <div class="bg-white shadow-xl rounded-lg p-6 flex-1 hover:text-white hover:bg-[#0A0737] hover:scale-105 transition-transform group">
+                <h2 class="group-hover:text-white text-xl font-bold mb-4 text-center">Visi</h2>
+                <p class="text-gray-700 text-center group-hover:text-white">
                     Ruang Terbuka Hijau Jakarta yang Nyaman, Maju, Lestari dan Terjangkau bagi warga
                 </p>
-                <p class="text-gray-500 text-center mt-4">(berdasarkan RENSTRA 2017 – 2022)</p>
+                <p class="text-gray-500 text-center mt-4 group-hover:text-white">(berdasarkan RENSTRA 2017 – 2022)</p>
             </div>
     
             <!-- Misi Section -->
-            <div class="bg-[#0A0737] shadow-xl rounded-lg p-6 flex-1 text-white hover:scale-105 transition-transform">
-                <h2 class="text-2xl font-bold mb-4 text-center">Misi</h2>
-                <ul class="list-disc list-inside space-y-2 text-justify">
+            <div class="bg-white shadow-xl rounded-lg p-6 flex-1 hover:text-white hover:bg-[#0A0737] hover:scale-105 transition-transform group">
+                <h2 class="text-2xl font-bold mb-4 text-center group-hover:text-white">Misi</h2>
+                <ul class="text-gray-700 list-disc list-inside space-y-2 text-justify group-hover:text-white">
                     <li>Menyediakan Ruang Terbuka Hijau Hutan, Taman dan Pemakaman yang nyaman sebagai ruang aktivitas dan kreativitas publik;</li>
                     <li>Meningkatkan Pelayanan dan peran serta masyarakat di Bidang Kehutanan, Pertamanan dan Pemakaman dalam penyediaan dan pengelolaan Ruang Terbuka Hijau;</li>
                     <li>Mewujudkan konservasi flora dan fauna yang memperkuat daya dukung lingkungan;</li>

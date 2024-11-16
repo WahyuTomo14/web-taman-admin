@@ -4,7 +4,7 @@
         
         <!-- Logo and Description Section -->
         <div class="mb-8 md:mb-0 md:w-1/3">
-            <img src="images/logofooter.png" alt="Logo" class="mb-4 w-[310px] h-[130px] hover:scale-105 transition-transform pt-4">
+            <img src="{{asset('images/logofooter.png')}}" alt="Logo" class="mb-4 w-[310px] h-[130px] hover:scale-105 transition-transform pt-4">
             <p class="mt-2 pt-4 text-lg leading-relaxed text-gray-300">
                 Dinas Pertamanan dan Hutan Kota Provinsi DKI Jakarta merupakan Satuan Kerja Perangkat Daerah yang mengurusi urusan Kehutanan, Pertamanan, dan Permakaman di Lingkup Kerja Wilayah DKI Jakarta.
             </p>
@@ -98,10 +98,10 @@
         <div class="md:w-1/3 pt-36 pl-8">
             <h3 class="font-semibold text-xl mb-4">Pages</h3>
             <ul class="space-y-2">
-                <li><a href="/Home" class="text-lg hover:text-gray-400">Beranda</a></li>
+                <li><a href="/" class="text-lg hover:text-gray-400">Beranda</a></li>
                 <li><a href="/tentangkami" class="text-lg hover:text-gray-400">Tentang Kami</a></li>
-                <li><a href="#" class="text-lg hover:text-gray-400">Blog</a></li>
-                <li><a href="#" class="text-lg hover:text-gray-400">Data Taman</a></li>
+                <li><a href="/blogs" class="text-lg hover:text-gray-400">Blog</a></li>
+                <li><a href="/taman" class="text-lg hover:text-gray-400">Data Taman</a></li>
             </ul>
         </div>
 
